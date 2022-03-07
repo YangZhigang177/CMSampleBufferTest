@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B597CD927D49CFB00F1ED90 /* semi_sphere.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3B597CD827D49CFB00F1ED90 /* semi_sphere.mp4 */; };
+		3BA8D65F27D5F4C200F1BBB4 /* DisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8D65E27D5F4C200F1BBB4 /* DisplayView.swift */; };
+		3BA8D66127D5F5DA00F1BBB4 /* AlphaFrameFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8D66027D5F5DA00F1BBB4 /* AlphaFrameFilter.metal */; };
+		3BA8D66327D5F61000F1BBB4 /* CompositedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8D66227D5F61000F1BBB4 /* CompositedView.swift */; };
+		3BA8D66527D5F79600F1BBB4 /* AlphaFrameFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8D66427D5F79600F1BBB4 /* AlphaFrameFilter.swift */; };
+		3BA8D66A27D6028000F1BBB4 /* AVAsset+VideoSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8D66927D6028000F1BBB4 /* AVAsset+VideoSize.swift */; };
+		3BA8D66C27D602EF00F1BBB4 /* CIImage+VerticalSplit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8D66B27D602EF00F1BBB4 /* CIImage+VerticalSplit.swift */; };
+		3BA8D66E27D6042F00F1BBB4 /* CIKernel+DefaultMetalLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8D66D27D6042F00F1BBB4 /* CIKernel+DefaultMetalLibrary.swift */; };
 		3BDF87D727D1F7BE00ABA2B4 /* CMSampleBufferTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF87D627D1F7BE00ABA2B4 /* CMSampleBufferTestApp.swift */; };
 		3BDF87D927D1F7BE00ABA2B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF87D827D1F7BE00ABA2B4 /* ContentView.swift */; };
 		3BDF87DB27D1F7BF00ABA2B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BDF87DA27D1F7BF00ABA2B4 /* Assets.xcassets */; };
@@ -14,8 +22,34 @@
 		3BDF87E827D1F7BF00ABA2B4 /* CMSampleBufferTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF87E727D1F7BF00ABA2B4 /* CMSampleBufferTestTests.swift */; };
 		3BDF87F227D1F7BF00ABA2B4 /* CMSampleBufferTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF87F127D1F7BF00ABA2B4 /* CMSampleBufferTestUITests.swift */; };
 		3BDF87F427D1F7BF00ABA2B4 /* CMSampleBufferTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF87F327D1F7BF00ABA2B4 /* CMSampleBufferTestUITestsLaunchTests.swift */; };
-		3BDF880427D2027A00ABA2B4 /* semi_sphere.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3BDF880327D2027A00ABA2B4 /* semi_sphere.mp4 */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		3BA8D66627D5FD5B00F1BBB4 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = compiled.air;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(METAL_LIBRARY_OUTPUT_DIR)/$(INPUT_FILE_BASE).metallib",
+			);
+			script = "# metal\nxcrun metallib -cikernel \"${INPUT_FILE_PATH}\" -o \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+		};
+		3BA8D66727D5FD9600F1BBB4 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = sourcecode.metal;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_BASE).air",
+			);
+			script = "# metal\nxcrun metal -c -I $MTL_HEADER_SEARCH_PATHS -fcikernel \"${INPUT_FILE_PATH}\" -o \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		3BDF87E427D1F7BF00ABA2B4 /* PBXContainerItemProxy */ = {
@@ -35,6 +69,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B597CD827D49CFB00F1ED90 /* semi_sphere.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = semi_sphere.mp4; sourceTree = "<group>"; };
+		3BA8D65E27D5F4C200F1BBB4 /* DisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
+		3BA8D66027D5F5DA00F1BBB4 /* AlphaFrameFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = AlphaFrameFilter.metal; sourceTree = "<group>"; };
+		3BA8D66227D5F61000F1BBB4 /* CompositedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositedView.swift; sourceTree = "<group>"; };
+		3BA8D66427D5F79600F1BBB4 /* AlphaFrameFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaFrameFilter.swift; sourceTree = "<group>"; };
+		3BA8D66927D6028000F1BBB4 /* AVAsset+VideoSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAsset+VideoSize.swift"; sourceTree = "<group>"; };
+		3BA8D66B27D602EF00F1BBB4 /* CIImage+VerticalSplit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+VerticalSplit.swift"; sourceTree = "<group>"; };
+		3BA8D66D27D6042F00F1BBB4 /* CIKernel+DefaultMetalLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIKernel+DefaultMetalLibrary.swift"; sourceTree = "<group>"; };
 		3BDF87D327D1F7BE00ABA2B4 /* CMSampleBufferTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CMSampleBufferTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BDF87D627D1F7BE00ABA2B4 /* CMSampleBufferTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMSampleBufferTestApp.swift; sourceTree = "<group>"; };
 		3BDF87D827D1F7BE00ABA2B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,7 +87,6 @@
 		3BDF87ED27D1F7BF00ABA2B4 /* CMSampleBufferTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CMSampleBufferTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BDF87F127D1F7BF00ABA2B4 /* CMSampleBufferTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMSampleBufferTestUITests.swift; sourceTree = "<group>"; };
 		3BDF87F327D1F7BF00ABA2B4 /* CMSampleBufferTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMSampleBufferTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		3BDF880327D2027A00ABA2B4 /* semi_sphere.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = semi_sphere.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +114,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3BA8D66827D6025900F1BBB4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3BA8D66927D6028000F1BBB4 /* AVAsset+VideoSize.swift */,
+				3BA8D66B27D602EF00F1BBB4 /* CIImage+VerticalSplit.swift */,
+				3BA8D66D27D6042F00F1BBB4 /* CIKernel+DefaultMetalLibrary.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		3BDF87CA27D1F7BE00ABA2B4 = {
 			isa = PBXGroup;
 			children = (
@@ -96,8 +147,12 @@
 		3BDF87D527D1F7BE00ABA2B4 /* CMSampleBufferTest */ = {
 			isa = PBXGroup;
 			children = (
+				3BA8D66827D6025900F1BBB4 /* Extension */,
 				3BDF880227D2025C00ABA2B4 /* Resource */,
 				3BDF87D627D1F7BE00ABA2B4 /* CMSampleBufferTestApp.swift */,
+				3BA8D65E27D5F4C200F1BBB4 /* DisplayView.swift */,
+				3BA8D66227D5F61000F1BBB4 /* CompositedView.swift */,
+				3BA8D66427D5F79600F1BBB4 /* AlphaFrameFilter.swift */,
 				3BDF87D827D1F7BE00ABA2B4 /* ContentView.swift */,
 				3BDF87DA27D1F7BF00ABA2B4 /* Assets.xcassets */,
 				3BDF87DC27D1F7BF00ABA2B4 /* Preview Content */,
@@ -133,7 +188,8 @@
 		3BDF880227D2025C00ABA2B4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				3BDF880327D2027A00ABA2B4 /* semi_sphere.mp4 */,
+				3BA8D66027D5F5DA00F1BBB4 /* AlphaFrameFilter.metal */,
+				3B597CD827D49CFB00F1ED90 /* semi_sphere.mp4 */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -150,6 +206,8 @@
 				3BDF87D127D1F7BE00ABA2B4 /* Resources */,
 			);
 			buildRules = (
+				3BA8D66727D5FD9600F1BBB4 /* PBXBuildRule */,
+				3BA8D66627D5FD5B00F1BBB4 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -243,8 +301,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BDF87DE27D1F7BF00ABA2B4 /* Preview Assets.xcassets in Resources */,
-				3BDF880427D2027A00ABA2B4 /* semi_sphere.mp4 in Resources */,
 				3BDF87DB27D1F7BF00ABA2B4 /* Assets.xcassets in Resources */,
+				3B597CD927D49CFB00F1ED90 /* semi_sphere.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +327,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA8D65F27D5F4C200F1BBB4 /* DisplayView.swift in Sources */,
+				3BA8D66A27D6028000F1BBB4 /* AVAsset+VideoSize.swift in Sources */,
 				3BDF87D927D1F7BE00ABA2B4 /* ContentView.swift in Sources */,
+				3BA8D66527D5F79600F1BBB4 /* AlphaFrameFilter.swift in Sources */,
+				3BA8D66E27D6042F00F1BBB4 /* CIKernel+DefaultMetalLibrary.swift in Sources */,
+				3BA8D66327D5F61000F1BBB4 /* CompositedView.swift in Sources */,
+				3BA8D66127D5F5DA00F1BBB4 /* AlphaFrameFilter.metal in Sources */,
+				3BA8D66C27D602EF00F1BBB4 /* CIImage+VerticalSplit.swift in Sources */,
 				3BDF87D727D1F7BE00ABA2B4 /* CMSampleBufferTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,7 +425,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_ENABLE_INDEX_STORE = NO;
+				MTL_ENABLE_MODULES = NO;
 				MTL_FAST_MATH = YES;
+				MTL_HEADER_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -415,7 +483,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_INDEX_STORE = NO;
+				MTL_ENABLE_MODULES = NO;
 				MTL_FAST_MATH = YES;
+				MTL_HEADER_SEARCH_PATHS = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
